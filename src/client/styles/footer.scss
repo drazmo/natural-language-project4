@@ -1,0 +1,17 @@
+footer {
+    p {
+        text-align: center;
+    }
+    a {
+        color: #555555;
+        &:link {
+            color: #555555;
+        }
+        &:hover {
+            color: #000;
+        }
+        &:active {
+            color: #555555;
+        }
+    }
+}

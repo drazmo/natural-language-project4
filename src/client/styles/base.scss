@@ -1,0 +1,61 @@
+@mixin box-shadow( $horiz: .5em, $vert: .5em, $blur: 0px, $spread: 0px, $color: #000000) {
+    -webkit-box-shadow: $horiz $vert $blur $spread $color;
+    -moz-box-shadow: $horiz $vert $blur $spread $color;
+    box-shadow: $horiz $vert $blur $spread $color;
+}
+
+@mixin border-radius ( $value: 3px) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+    // keeps background from busting out of border
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+body {
+    min-height: 100vh;
+    color: #222;
+    background: #f8f8f8;
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding-top: 50px;
+    @include border-radius(20px);
+    @include box-shadow(0px, 15px, 17px, .17px, rgba(0, 0, 0, 0.5));
+    h1 {
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+section {
+    margin-left: 75px;
+    margin-right: 75px;
+    padding-left: 34px;
+}
+
+#results {
+    background-color: #86d2d9;
+    padding: 5px;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    margin-top: -3px;
+    margin-bottom: 16px;
+}
+
+#results_disagree {
+    display: none;
+}
+
+#results_agree {
+    display: none;
+}

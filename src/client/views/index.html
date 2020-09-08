@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sentiment Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <section>
+            <h1>Sentiment Analysis</h1>
+            <form class="mood-form" onsubmit="return Client.handleSubmit(event)">
+                <div class="prompt">Enter a paragraph and let us analyze it for you!</div>
+                <br/>
+                <textarea id="name" name="input" rows="4" cols="50" placeholder="Ex. What are your thoughts on electric cars?"></textarea>
+                </textarea>
+                <br/>
+                <input class="form-submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+            </form>
+        </section>
+
+        <section>
+
+            <div id="results_start">
+                <img src="./img/sentiment.png" />
+            </div>
+            <div id="results_agree">
+                <img src="./img/agreement.png" />
+            </div>
+            <div id="results_disagree">
+                <img src="./img/disagreement.png" />
+            </div>
+            <div id="results">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Analysis brought to you by <a href="https://www.meaningcloud.com/">Meaning Cloud</a> and <a href="https://www.vecteezy.com/free-vector/emotions">Emotions Vectors by Vecteezy</a></p>
+
+    </footer>
+
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
